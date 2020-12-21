@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Virtual Scanner</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="gallery_fragment">Gallery</string>
+    <string name="document_fragment">Documents</string>
+    <string name="locker_fragment">Locker</string>
+    <string name="settings_fragment">Settings</string>
+    <string name="add_file_name">Add filename</string>
+    <string name="file_name">Filename</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="enterpasscode">Enter passcode</string>
+    <string name="confirmpasscode">Confirm passcode</string>
+    <string name="createpasscode">Create passcode</string>
+    <string name="save_img">Save images to Gallery</string>
+    <string name="def_file_name">Default filename</string>
+    <string name="contact">Contact Us!</string>
+    <string name="insta_lbl">Instagram ID:</string>
+    <string name="instaid">\@vektiq</string>
+    <string name="mail_lbl">Mail us at:</string>
+    <string name="mailid">vektiq\@gmail.com:</string>
+    <string name="linkedin_lbl">Linkedin:</string>
+    <string name="linkedinid">Vektiq Designers</string>
+    <string name="admob_interstitial_id">ca-app-pub-6181261630904450/8328047000</string>
+
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/Galley"
+        android:icon="@drawable/gallery_icon"
+        android:title="Gallery" />
+
+    <item
+        android:id="@+id/Documents"
+        android:icon="@drawable/documents_icon"
+        app:showAsAction="withText"
+        android:title="Documents" />
+
+    <item
+        android:id="@+id/placeholder"
+        android:title="" />
+
+    <item
+        android:id="@+id/Loker"
+        android:icon="@drawable/locker_logo"
+        android:title="Locker" />
+
+    <item
+        android:id="@+id/Settings"
+        android:icon="@drawable/settings_logo"
+        android:title="Settings" />
+
+</menu>

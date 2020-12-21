@@ -1,0 +1,3 @@
+include ':scanlibrary'
+rootProject.name='Virtual Scanner'
+include ':app'
