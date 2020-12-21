@@ -1,79 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@drawable/radius_background"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/radius_background">
 
 
     <TextView
         android:id="@+id/add_f_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_file_name"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/add_file_name"
         android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/_22sdp"/>
+        android:textSize="@dimen/_22sdp" />
+
     <View
         android:id="@+id/view_1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
         android:layout_below="@+id/add_f_name"
-        android:background="@color/colorAccent"
-        android:layout_marginHorizontal="@dimen/_10sdp"/>
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:background="@color/colorAccent" />
+
     <EditText
+        android:id="@+id/fileNameEditTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/view_1"
         android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
         android:background="@null"
         android:hint="@string/file_name"
         android:text="@string/file_name"
         android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:id="@+id/fileNameEditTxt"/>
+        android:textColorHint="@color/colorAccent" />
+
     <View
         android:id="@+id/view_2"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
         android:layout_below="@+id/fileNameEditTxt"
-        android:background="@color/colorAccent"
-        android:layout_marginHorizontal="@dimen/_10sdp"/>
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:background="@color/colorAccent" />
 
     <LinearLayout
+        android:id="@+id/btnLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnLayout"
         android:layout_below="@+id/view_2"
-        android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginBottom="@dimen/_10sdp"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_30sdp"
-            android:background="@drawable/btn_background"
             android:id="@+id/cancelButtonD"
-            android:text="@string/cancel"
-            android:gravity="center"
-            android:textSize="@dimen/_13sdp"
-            android:layout_marginHorizontal="@dimen/_2sdp"
-            android:layout_weight="1"
-            android:textColor="@color/colorPrimary"/>
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_30sdp"
-            android:background="@drawable/btn_background"
             android:layout_marginHorizontal="@dimen/_2sdp"
-            android:id="@+id/saveButtonD"
-            android:text="@string/save"
-            android:textSize="@dimen/_13sdp"
-            android:gravity="center"
             android:layout_weight="1"
-            android:textColor="@color/colorPrimary"/>
+            android:background="@drawable/btn_background"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_13sdp" />
+
+        <TextView
+            android:id="@+id/saveButtonD"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginHorizontal="@dimen/_2sdp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background"
+            android:gravity="center"
+            android:text="@string/save"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_13sdp" />
 
     </LinearLayout>
 

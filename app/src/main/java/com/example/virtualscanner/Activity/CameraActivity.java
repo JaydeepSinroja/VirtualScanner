@@ -1,9 +1,5 @@
 package com.example.virtualscanner.Activity;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -15,7 +11,6 @@ import android.graphics.Matrix;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.hardware.Camera;
-import android.media.FaceDetector;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -29,6 +24,9 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.virtualscanner.Adapter.ImagePreviewAdapter;
 import com.example.virtualscanner.R;
@@ -49,6 +47,14 @@ import java.util.List;
 
 public class CameraActivity extends AppCompatActivity implements SurfaceHolder.Callback {
 
+    Camera.AutoFocusCallback myAutoFocusCallback = new Camera.AutoFocusCallback() {
+
+        @Override
+        public void onAutoFocus(boolean arg0, Camera arg1) {
+            // TODO Auto-generated method stub
+            //buttonTakePicture.setEnabled(true);
+        }
+    };
     private ActivityCameraBinding binding;
     private Activity activity;
     private SurfaceHolder surfaceHolder;
@@ -63,7 +69,6 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
     private ArrayList<Bitmap> bitmapArrayList;
     private ArrayList<Bitmap> tempArrayList = new ArrayList<>();
     private ImagePreviewAdapter imagePreviewAdapter;
-
     private int INDEX = 0;
 
     @Override
@@ -80,16 +85,13 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
 
             imagePreviewAdapter.setImagePreview((arrayList) -> {
 
-                if (bitmapArrayList.size()==0)
-                {
+                if (bitmapArrayList.size() == 0) {
                     binding.cancelButton.setVisibility(View.VISIBLE);
                 }
 
-                if (arrayList.size()!=0) {
+                if (arrayList.size() != 0) {
                     binding.imagePreview.setImageBitmap(arrayList.get(arrayList.size() - 1));
-                }
-                else
-                {
+                } else {
                     bitmapArrayList.clear();
                     binding.imagePreview.setVisibility(View.GONE);
                     binding.addMoreLayout.setVisibility(View.GONE);
@@ -98,12 +100,12 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
 
             });
         }
-        if (bitmapArrayList.size()>0)
-        {
+        if (bitmapArrayList.size() > 0) {
             binding.cancelButton.setVisibility(View.GONE);
         }
 
     }
+
     @SuppressLint("ClickableViewAccessibility")
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -176,17 +178,16 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
             CustomDialog customDialog = new CustomDialog(activity, bitmapArrayList);
             customDialog.show();
         });
-        
+
         /////////////////////////////////////////////////////////////
         //swipe_listner//////////////////////////////////////////////
         /////////////////////////////////////////////////////////////
 
-        binding.imagePreview.setOnTouchListener(new OnSwipeTouchListener(activity)
-        {
+        binding.imagePreview.setOnTouchListener(new OnSwipeTouchListener(activity) {
             @Override
             public void onSwipeLeft() {
                 super.onSwipeLeft();
-                if (INDEX<bitmapArrayList.size()-1) {
+                if (INDEX < bitmapArrayList.size() - 1) {
 
 
                     INDEX++;
@@ -199,11 +200,10 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
             @Override
             public void onSwipeRight() {
                 super.onSwipeRight();
-                if (INDEX>0) {
+                if (INDEX > 0) {
 
                     INDEX--;
                     binding.imagePreview.setImageBitmap(bitmapArrayList.get(INDEX));
-
 
 
                 }
@@ -211,7 +211,6 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
         });
 
 
-       
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -286,15 +285,6 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
         }
         return x;
     }
-
-    Camera.AutoFocusCallback myAutoFocusCallback = new Camera.AutoFocusCallback() {
-
-        @Override
-        public void onAutoFocus(boolean arg0, Camera arg1) {
-            // TODO Auto-generated method stub
-            //buttonTakePicture.setEnabled(true);
-        }
-    };
 
     private boolean openCamera(int id) {
         boolean result = false;
@@ -528,7 +518,7 @@ public class CameraActivity extends AppCompatActivity implements SurfaceHolder.C
                 bitmapArrayList.add(bitmap);
                 binding.imagePreview.setVisibility(View.VISIBLE);
                 binding.imagePreview.setImageBitmap(bitmap);
-                INDEX = bitmapArrayList.size()-1;
+                INDEX = bitmapArrayList.size() - 1;
                 binding.cameraControlLayout.setVisibility(View.INVISIBLE);
                 binding.addMoreLayout.setVisibility(View.VISIBLE);
 

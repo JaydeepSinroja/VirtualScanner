@@ -18,296 +18,292 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
-            android:text="@string/settings_fragment"
             android:fontFamily="@font/josefinsans_variablefont_wght"
+            android:text="@string/settings_fragment"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/_25sdp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/_1sdp"
-            android:background="@color/gray"
             android:layout_marginHorizontal="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_5sdp"/>
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/gray" />
 
     </LinearLayout>
 
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/saveLayout"
-            android:background="@drawable/radius_background"
-            android:layout_marginHorizontal="@dimen/_10sdp"
-            android:layout_below="@+id/toolbar_settings"
+    <RelativeLayout
+        android:id="@+id/saveLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_settings"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:background="@drawable/radius_background">
+
+        <ImageView
+            android:id="@+id/img_gallery"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
             android:layout_marginVertical="@dimen/_10sdp"
-            >
-
-            <ImageView
-                android:id="@+id/img_gallery"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginVertical="@dimen/_10sdp"
-                android:src="@drawable/gallery_icon" />
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/gallery_icon" />
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/save_img"
-                    android:textSize="@dimen/_18sdp"
-                    android:layout_toEndOf="@+id/img_gallery"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:textColor="@color/colorPrimary"
-                    android:fontFamily="@font/josefinsans_variablefont_wght"
-                    android:id="@+id/save_text"/>
-
-                <Switch
-                    android:id="@+id/saveGallerySwitch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/save_text"
-                    android:layout_centerVertical="true"
-                   android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/save_text"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/defNameLayout"
-            android:background="@drawable/radius_background"
-            android:layout_marginHorizontal="@dimen/_10sdp"
-            android:layout_below="@+id/saveLayout"
-            android:gravity="center_vertical"
-            android:layout_marginVertical="@dimen/_10sdp"
-            >
-
-            <ImageView
-                android:id="@+id/img_doc"
-                android:layout_width="@dimen/_30sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/doc_logo_black" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/def_file_name"
-                android:textSize="@dimen/_18sdp"
-                android:layout_toEndOf="@+id/img_doc"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:textColor="@color/colorPrimary"
-                android:fontFamily="@font/josefinsans_variablefont_wght"
-                android:id="@+id/def_name_text"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/file_name"
-                android:textSize="@dimen/_12sdp"
-                android:layout_toEndOf="@+id/img_doc"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:textColor="@color/colorPrimary"
-                android:layout_below="@+id/def_name_text"
-                android:fontFamily="@font/josefinsans_variablefont_wght"
-                android:id="@+id/defFilename"/>
-
-        </RelativeLayout>
-
-        <View
-            android:id="@+id/view2"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_1sdp"
-            android:layout_below="@+id/defNameLayout"
+            android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:background="@color/gray"
-            android:layout_marginHorizontal="@dimen/_10sdp"/>
+            android:layout_toEndOf="@+id/img_gallery"
+            android:fontFamily="@font/josefinsans_variablefont_wght"
+            android:text="@string/save_img"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_18sdp" />
+
+        <Switch
+            android:id="@+id/saveGallerySwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_toEndOf="@+id/save_text"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/defNameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/saveLayout"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:background="@drawable/radius_background"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/img_doc"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/doc_logo_black" />
+
+
+        <TextView
+            android:id="@+id/def_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_toEndOf="@+id/img_doc"
+            android:fontFamily="@font/josefinsans_variablefont_wght"
+            android:text="@string/def_file_name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_18sdp" />
+
+        <TextView
+            android:id="@+id/defFilename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/def_name_text"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_toEndOf="@+id/img_doc"
+            android:fontFamily="@font/josefinsans_variablefont_wght"
+            android:text="@string/file_name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_12sdp" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@+id/defNameLayout"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/gray" />
+
+    <RelativeLayout
+        android:id="@+id/contactLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view2"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/radius_background">
+
+        <TextView
+            android:id="@+id/contact_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/josefinsans_variablefont_wght"
+            android:text="@string/contact"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_30sdp" />
 
         <RelativeLayout
+            android:id="@+id/instaLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/contactLayout"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_below="@+id/view2"
+            android:layout_below="@+id/contact_text"
             android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_20sdp"
             android:background="@drawable/radius_background"
-            >
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/img_insta"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/instagram_icon" />
+
 
             <TextView
+                android:id="@+id/insta_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/contact"
-                android:fontFamily="@font/josefinsans_variablefont_wght"
-                android:textSize="@dimen/_30sdp"
-                android:textColor="@color/colorPrimary"
-                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:id="@+id/contact_text"/>
+                android:layout_toEndOf="@+id/img_insta"
+                android:fontFamily="@font/josefinsans_variablefont_wght"
+                android:text="@string/insta_lbl"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/instaId"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/instaLayout"
-                android:background="@drawable/radius_background"
-                android:layout_marginHorizontal="@dimen/_10sdp"
-                android:layout_below="@+id/contact_text"
-                android:gravity="center_vertical"
-                android:layout_marginStart="@dimen/_20sdp"
-                >
-
-                <ImageView
-                    android:id="@+id/img_insta"
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/instagram_icon" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/insta_lbl"
-                    android:textSize="@dimen/_13sdp"
-                    android:layout_toEndOf="@+id/img_insta"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/josefinsans_variablefont_wght"
-                    android:id="@+id/insta_text"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/instaid"
-                    android:textSize="@dimen/_18sdp"
-                    android:layout_toEndOf="@+id/img_insta"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:autoLink="web"
-                    android:linksClickable="true"
-                    android:textColor="@color/colorPrimary"
-                    android:layout_below="@+id/insta_text"
-                    android:fontFamily="@font/josefinsans_variablefont_wght"
-                    android:id="@+id/instaId"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/mailLayout"
-                android:background="@drawable/radius_background"
-                android:layout_marginHorizontal="@dimen/_10sdp"
-                android:layout_below="@+id/instaLayout"
-                android:gravity="center_vertical"
-                android:layout_marginStart="@dimen/_20sdp"
-                >
-
-                <ImageView
-                    android:id="@+id/img_mail"
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/mail_icon" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/mail_lbl"
-                    android:textSize="@dimen/_13sdp"
-                    android:layout_toEndOf="@+id/img_mail"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/josefinsans_variablefont_wght"
-                    android:id="@+id/mail_text"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/mailid"
-                    android:textSize="@dimen/_18sdp"
-                    android:layout_toEndOf="@+id/img_mail"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:textColor="@color/colorPrimary"
-                    android:layout_below="@+id/mail_text"
-                    android:fontFamily="@font/josefinsans_variablefont_wght"
-                    android:id="@+id/mailId"/>
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/linkdLayout"
-                android:background="@drawable/radius_background"
-                android:layout_marginHorizontal="@dimen/_10sdp"
-                android:layout_below="@+id/mailLayout"
+                android:layout_below="@+id/insta_text"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
-                android:gravity="center_vertical"
-                android:layout_marginStart="@dimen/_20sdp"
-                >
-
-                <ImageView
-                    android:id="@+id/img_linkdin"
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/linkdin_icon" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/linkedin_lbl"
-                    android:textSize="@dimen/_13sdp"
-                    android:layout_toEndOf="@+id/img_linkdin"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/josefinsans_variablefont_wght"
-                    android:id="@+id/linkdin_text"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/linkedinid"
-                    android:textSize="@dimen/_18sdp"
-                    android:layout_toEndOf="@+id/img_linkdin"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:textColor="@color/colorPrimary"
-                    android:layout_below="@+id/linkdin_text"
-                    android:fontFamily="@font/josefinsans_variablefont_wght"
-                    android:id="@+id/linkdinId"/>
-
-            </RelativeLayout>
+                android:layout_toEndOf="@+id/img_insta"
+                android:autoLink="web"
+                android:fontFamily="@font/josefinsans_variablefont_wght"
+                android:linksClickable="true"
+                android:text="@string/instaid"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_18sdp" />
 
         </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mailLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/instaLayout"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:background="@drawable/radius_background"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/img_mail"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/mail_icon" />
+
+
+            <TextView
+                android:id="@+id/mail_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_toEndOf="@+id/img_mail"
+                android:fontFamily="@font/josefinsans_variablefont_wght"
+                android:text="@string/mail_lbl"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp" />
+
+            <TextView
+                android:id="@+id/mailId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mail_text"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_toEndOf="@+id/img_mail"
+                android:fontFamily="@font/josefinsans_variablefont_wght"
+                android:text="@string/mailid"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_18sdp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/linkdLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mailLayout"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/radius_background"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/img_linkdin"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/linkdin_icon" />
+
+
+            <TextView
+                android:id="@+id/linkdin_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_toEndOf="@+id/img_linkdin"
+                android:fontFamily="@font/josefinsans_variablefont_wght"
+                android:text="@string/linkedin_lbl"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp" />
+
+            <TextView
+                android:id="@+id/linkdinId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linkdin_text"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_toEndOf="@+id/img_linkdin"
+                android:fontFamily="@font/josefinsans_variablefont_wght"
+                android:text="@string/linkedinid"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_18sdp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
     <LinearLayout
-        android:layout_below="@+id/contactLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/gradient_bg"
-        android:paddingHorizontal="@dimen/_20sdp"
-        android:paddingVertical="@dimen/_5sdp"
+        android:layout_below="@+id/contactLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/gradient_bg"
+        android:gravity="center"
         android:orientation="vertical"
-        android:gravity="center">
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:paddingVertical="@dimen/_5sdp">
 
         <TextView
             android:layout_width="wrap_content"

@@ -1,12 +1,10 @@
 package com.example.virtualscanner.Adapter;
 
 import android.app.Activity;
-import android.net.Uri;
 import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,6 +21,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.galleryV
 
     private Activity activity;
     private ArrayList<GalleryModel> galleryArrayList;
+
     public GalleryAdapter(Activity activity, ArrayList<GalleryModel> galleryArrayList) {
         this.activity = activity;
         this.galleryArrayList = galleryArrayList;
@@ -31,7 +30,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.galleryV
     @NonNull
     @Override
     public galleryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view =  LayoutInflater.from(parent.getContext()).inflate(R.layout.previous_scanned_list_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.previous_scanned_list_item, parent, false);
         return new galleryViewHolder(view);
     }
 
@@ -54,7 +53,8 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.galleryV
 
     public class galleryViewHolder extends RecyclerView.ViewHolder {
 
-    private PreviousScannedListItemBinding binding;
+        private PreviousScannedListItemBinding binding;
+
         public galleryViewHolder(@NonNull View itemView) {
             super(itemView);
             binding = PreviousScannedListItemBinding.bind(itemView);

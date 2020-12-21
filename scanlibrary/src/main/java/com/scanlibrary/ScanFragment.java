@@ -40,6 +40,10 @@ public class ScanFragment extends Fragment {
     private IScanner scanner;
     private Bitmap original;
 
+    public ScanFragment() {
+
+    }
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -54,10 +58,6 @@ public class ScanFragment extends Fragment {
         view = inflater.inflate(R.layout.scan_fragment_layout, null);
         init();
         return view;
-    }
-
-    public ScanFragment() {
-
     }
 
     private void init() {
@@ -89,11 +89,6 @@ public class ScanFragment extends Fragment {
         return null;
     }
 
-    private Uri getUri() {
-        Uri uri = getArguments().getParcelable(ScanConstants.SELECTED_BITMAP);
-        return uri;
-    }
-
     private void setBitmap(Bitmap original) {
         Bitmap scaledBitmap = scaledBitmap(original, sourceFrame.getWidth(), sourceFrame.getHeight());
         sourceImageView.setImageBitmap(scaledBitmap);
@@ -105,6 +100,11 @@ public class ScanFragment extends Fragment {
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(tempBitmap.getWidth() + 2 * padding, tempBitmap.getHeight() + 2 * padding);
         layoutParams.gravity = Gravity.CENTER;
         polygonView.setLayoutParams(layoutParams);
+    }
+
+    private Uri getUri() {
+        Uri uri = getArguments().getParcelable(ScanConstants.SELECTED_BITMAP);
+        return uri;
     }
 
     private Map<Integer, PointF> getEdgePoints(Bitmap tempBitmap) {
@@ -150,18 +150,6 @@ public class ScanFragment extends Fragment {
         return orderedPoints;
     }
 
-    private class ScanButtonClickListener implements View.OnClickListener {
-        @Override
-        public void onClick(View v) {
-            Map<Integer, PointF> points = polygonView.getPoints();
-            if (isScanPointsValid(points)) {
-                new ScanAsyncTask(points).execute();
-            } else {
-                showErrorDialog();
-            }
-        }
-    }
-
     private void showErrorDialog() {
         SingleButtonDialogFragment fragment = new SingleButtonDialogFragment(R.string.ok, getString(R.string.cantCrop), "Error", true);
         FragmentManager fm = getActivity().getFragmentManager();
@@ -197,6 +185,28 @@ public class ScanFragment extends Fragment {
         return _bitmap;
     }
 
+    protected void showProgressDialog(String message) {
+        progressDialogFragment = new ProgressDialogFragment(message);
+        FragmentManager fm = getFragmentManager();
+        progressDialogFragment.show(fm, ProgressDialogFragment.class.toString());
+    }
+
+    protected void dismissDialog() {
+        progressDialogFragment.dismissAllowingStateLoss();
+    }
+
+    private class ScanButtonClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            Map<Integer, PointF> points = polygonView.getPoints();
+            if (isScanPointsValid(points)) {
+                new ScanAsyncTask(points).execute();
+            } else {
+                showErrorDialog();
+            }
+        }
+    }
+
     private class ScanAsyncTask extends AsyncTask<Void, Void, Bitmap> {
 
         private Map<Integer, PointF> points;
@@ -213,7 +223,7 @@ public class ScanFragment extends Fragment {
 
         @Override
         protected Bitmap doInBackground(Void... params) {
-            Bitmap bitmap =  getScannedBitmap(original, points);
+            Bitmap bitmap = getScannedBitmap(original, points);
             Uri uri = Utils.getUri(getActivity(), bitmap);
             scanner.onScanFinish(uri);
             return bitmap;
@@ -225,16 +235,6 @@ public class ScanFragment extends Fragment {
             bitmap.recycle();
             dismissDialog();
         }
-    }
-
-    protected void showProgressDialog(String message) {
-        progressDialogFragment = new ProgressDialogFragment(message);
-        FragmentManager fm = getFragmentManager();
-        progressDialogFragment.show(fm, ProgressDialogFragment.class.toString());
-    }
-
-    protected void dismissDialog() {
-        progressDialogFragment.dismissAllowingStateLoss();
     }
 
 }

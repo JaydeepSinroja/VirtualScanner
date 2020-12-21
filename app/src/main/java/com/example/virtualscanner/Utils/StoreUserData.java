@@ -5,9 +5,9 @@ import android.content.SharedPreferences;
 
 
 public class StoreUserData {
+    public static String APP_KEY;
     private SharedPreferences pref = null;
     private Context parentActivity;
-    public static String APP_KEY;
 
     public StoreUserData(Context context) {
         parentActivity = context;

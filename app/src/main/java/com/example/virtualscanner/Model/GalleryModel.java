@@ -9,7 +9,8 @@ public class GalleryModel {
     private String path;
 
 
-    public GalleryModel(){}
+    public GalleryModel() {
+    }
 
     public Bitmap getBitmap() {
         return bitmap;

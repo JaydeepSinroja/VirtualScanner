@@ -10,13 +10,12 @@ import android.view.Window;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.virtualscanner.Fragment.SettingFragment;
 import com.example.virtualscanner.R;
 
 public class CustomeDialogSettings extends Dialog implements View.OnClickListener {
-    private Activity activity;
     TextView save, cancel;
     EditText editText;
+    private Activity activity;
     private StoreUserData storeUserData;
     private OnMyDialogResult onMyDialogResult;
 
@@ -30,7 +29,7 @@ public class CustomeDialogSettings extends Dialog implements View.OnClickListene
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.save_diolouge);
-       storeUserData = new StoreUserData(activity);
+        storeUserData = new StoreUserData(activity);
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         save = findViewById(R.id.saveButtonD);
         cancel = findViewById(R.id.cancelButtonD);
@@ -38,8 +37,7 @@ public class CustomeDialogSettings extends Dialog implements View.OnClickListene
         editText = findViewById(R.id.fileNameEditTxt);
         cancel.setOnClickListener(this);
         save.setOnClickListener(this);
-        if (!storeUserData.getString(Constants.FILENAME).equals(""))
-        {
+        if (!storeUserData.getString(Constants.FILENAME).equals("")) {
             editText.setText(storeUserData.getString(Constants.FILENAME));
         }
     }
@@ -61,16 +59,17 @@ public class CustomeDialogSettings extends Dialog implements View.OnClickListene
     private void saveFileName() {
 
         String fileName = editText.getText().toString().trim();
-        storeUserData.setString(Constants.FILENAME,fileName);
-       onMyDialogResult.finish(fileName);
+        storeUserData.setString(Constants.FILENAME, fileName);
+        onMyDialogResult.finish(fileName);
 
     }
 
 
-    public void setDialogResult(OnMyDialogResult dialogResult){
+    public void setDialogResult(OnMyDialogResult dialogResult) {
         onMyDialogResult = dialogResult;
     }
-    public interface OnMyDialogResult{
+
+    public interface OnMyDialogResult {
         void finish(String result);
     }
 

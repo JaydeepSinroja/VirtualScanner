@@ -12,16 +12,17 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.FileProvider;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,12 +34,12 @@ import java.util.Date;
  */
 public class PickImageFragment extends Fragment {
 
+    private static final int MY_CAMERA_REQUEST_CODE = 100;
     private View view;
     private ImageButton cameraButton;
     private ImageButton galleryButton;
     private Uri fileUri;
     private IScanner scanner;
-    private static final int MY_CAMERA_REQUEST_CODE = 100;
 
     @Override
     public void onAttach(Activity activity) {
@@ -97,21 +98,6 @@ public class PickImageFragment extends Fragment {
         return preference;
     }
 
-
-    private class CameraButtonClickListener implements View.OnClickListener {
-        @Override
-        public void onClick(View v) {
-            openCamera();
-        }
-    }
-
-    private class GalleryClickListener implements View.OnClickListener {
-        @Override
-        public void onClick(View view) {
-            openMediaContent();
-        }
-    }
-
     public void openMediaContent() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
@@ -121,7 +107,7 @@ public class PickImageFragment extends Fragment {
 
     public void openCamera() {
 
-        if(ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
             Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
             File file = createImageFile();
             boolean isDirectoryCreated = file.getParentFile().mkdirs();
@@ -205,6 +191,20 @@ public class PickImageFragment extends Fragment {
                 Toast.makeText(getActivity(), "camera permission denied", Toast.LENGTH_LONG).show();
             }
 
+        }
+    }
+
+    private class CameraButtonClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            openCamera();
+        }
+    }
+
+    private class GalleryClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            openMediaContent();
         }
     }
 }

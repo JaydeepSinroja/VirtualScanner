@@ -14,7 +14,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.virtualscanner.Utils.Constants;
-import com.example.virtualscanner.Utils.CustomDialog;
 import com.example.virtualscanner.Utils.CustomeDialogSettings;
 import com.example.virtualscanner.Utils.StoreUserData;
 import com.example.virtualscanner.databinding.FragmentSettingBinding;
@@ -26,11 +25,12 @@ public class SettingFragment extends Fragment {
     private Activity activity;
     private CustomeDialogSettings customDialog;
     private StoreUserData storeUserData;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentSettingBinding.inflate(inflater,container,false);
+        binding = FragmentSettingBinding.inflate(inflater, container, false);
         activity = getActivity();
         customDialog = new CustomeDialogSettings(activity);
         storeUserData = new StoreUserData(activity);
@@ -56,21 +56,21 @@ public class SettingFragment extends Fragment {
             customDialog.show();
         });
         binding.saveGallerySwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-                storeUserData.setBoolean(Constants.SAVETOGALLERY,isChecked);
+            storeUserData.setBoolean(Constants.SAVETOGALLERY, isChecked);
         });
 
         binding.instaLayout.setOnClickListener(v -> {
             Uri uri = Uri.parse("http://instagram.com/_u/vektiq/");
             Uri uri2 = Uri.parse("http://instagram.com/vektiq/");
             String pkg = "com.instagram.android";
-            openIntent(uri,uri2,pkg);
+            openIntent(uri, uri2, pkg);
         });
 
         binding.linkdLayout.setOnClickListener(v -> {
             Uri uri = Uri.parse("https://in.linkedin.com/in/vektiq-designers-8539331b3/");
             Uri uri2 = Uri.parse("https://in.linkedin.com/in/vektiq-designers-8539331b3");
             String pkg = "com.linkedin.android";
-            openIntent(uri,uri2,pkg);
+            openIntent(uri, uri2, pkg);
         });
 
         binding.mailLayout.setOnClickListener(v -> {
@@ -88,7 +88,7 @@ public class SettingFragment extends Fragment {
 
     }
 
-    private void openIntent(Uri uri,Uri uri2,String pkg) {
+    private void openIntent(Uri uri, Uri uri2, String pkg) {
 
         Intent likeIng = new Intent(Intent.ACTION_VIEW, uri);
 
@@ -97,7 +97,7 @@ public class SettingFragment extends Fragment {
         try {
             startActivity(likeIng);
         } catch (ActivityNotFoundException e) {
-            startActivity(new Intent(Intent.ACTION_VIEW,uri2));
+            startActivity(new Intent(Intent.ACTION_VIEW, uri2));
         }
     }
 }

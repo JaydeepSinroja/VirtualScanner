@@ -17,25 +17,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
-            android:text="@string/document_fragment"
             android:fontFamily="@font/josefinsans_variablefont_wght"
+            android:text="@string/document_fragment"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/_25sdp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/_1sdp"
-            android:background="@color/gray"
-            android:layout_marginTop="@dimen/_5sdp"/>
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/gray" />
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/docRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar_doc"
         android:layout_marginVertical="@dimen/_10sdp"
-        tools:listitem="@layout/doc_recycler_list"
-        android:id="@+id/docRecycler"/>
+        tools:listitem="@layout/doc_recycler_list" />
 
 </RelativeLayout>

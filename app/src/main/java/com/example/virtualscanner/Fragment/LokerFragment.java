@@ -29,7 +29,8 @@ public class LokerFragment extends Fragment implements View.OnClickListener {
     private StoreUserData storeUserData;
     private String password;
     private String confirm_password;
-    private  Animation animFade;
+    private Animation animFade;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

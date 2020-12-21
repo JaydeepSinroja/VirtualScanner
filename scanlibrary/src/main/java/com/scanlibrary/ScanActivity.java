@@ -13,6 +13,11 @@ import android.os.Bundle;
  */
 public class ScanActivity extends Activity implements IScanner, ComponentCallbacks2 {
 
+    static {
+        System.loadLibrary("opencv_java3");
+        System.loadLibrary("Scanner");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +49,7 @@ public class ScanActivity extends Activity implements IScanner, ComponentCallbac
 
     @Override
     public void onBackPressed() {
-        
+
         super.onBackPressed();
     }
 
@@ -137,9 +142,4 @@ public class ScanActivity extends Activity implements IScanner, ComponentCallbac
     public native Bitmap getBWBitmap(Bitmap bitmap);
 
     public native float[] getPoints(Bitmap bitmap);
-
-    static {
-        System.loadLibrary("opencv_java3");
-        System.loadLibrary("Scanner");
-    }
 }

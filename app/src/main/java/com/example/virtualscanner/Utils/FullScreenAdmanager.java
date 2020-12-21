@@ -29,7 +29,7 @@ public class FullScreenAdmanager {
     public void adMobFullScreen(OnCompleteAdListener listener) {
         this.listener = listener;
         loader.show();
-        MobileAds.initialize(activity,"ca-app-pub-6181261630904450~3907448086");
+        MobileAds.initialize(activity, "ca-app-pub-6181261630904450~3907448086");
 
         mInterstitialAd = new InterstitialAd(activity);
         mInterstitialAd.setAdUnitId(activity.getResources().getString(R.string.admob_interstitial_id));

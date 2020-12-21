@@ -103,6 +103,12 @@ public class PolygonView extends FrameLayout {
         return getOrderedPoints(points);
     }
 
+    public void setPoints(Map<Integer, PointF> pointFMap) {
+        if (pointFMap.size() == 4) {
+            setPointsCoordinates(pointFMap);
+        }
+    }
+
     public Map<Integer, PointF> getOrderedPoints(List<PointF> points) {
 
         PointF centerPoint = new PointF();
@@ -126,12 +132,6 @@ public class PolygonView extends FrameLayout {
             orderedPoints.put(index, pointF);
         }
         return orderedPoints;
-    }
-
-    public void setPoints(Map<Integer, PointF> pointFMap) {
-        if (pointFMap.size() == 4) {
-            setPointsCoordinates(pointFMap);
-        }
     }
 
     private void setPointsCoordinates(Map<Integer, PointF> pointFMap) {
@@ -174,6 +174,15 @@ public class PolygonView extends FrameLayout {
         imageView.setY(y);
         imageView.setOnTouchListener(new TouchListenerImpl());
         return imageView;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
+    public boolean isValidShape(Map<Integer, PointF> pointFMap) {
+        return pointFMap.size() == 4;
     }
 
     private class MidPointTouchListenerImpl implements OnTouchListener {
@@ -241,15 +250,6 @@ public class PolygonView extends FrameLayout {
             polygonView.invalidate();
             return true;
         }
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        return super.onTouchEvent(event);
-    }
-
-    public boolean isValidShape(Map<Integer, PointF> pointFMap) {
-        return pointFMap.size() == 4;
     }
 
     private class TouchListenerImpl implements OnTouchListener {

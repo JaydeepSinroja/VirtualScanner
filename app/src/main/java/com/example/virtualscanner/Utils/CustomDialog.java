@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.ContentValues;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -21,8 +20,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.virtualscanner.R;
-import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
-import com.google.android.gms.ads.doubleclick.PublisherInterstitialAd;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -32,9 +29,9 @@ import java.util.ArrayList;
 
 
 public class CustomDialog extends Dialog implements View.OnClickListener {
-    private Activity activity;
     TextView save, cancel;
     EditText editText;
+    private Activity activity;
     private PdfDocument document;
     private ArrayList<Bitmap> bitmapArrayList;
     private StoreUserData storeUserData;
@@ -48,8 +45,7 @@ public class CustomDialog extends Dialog implements View.OnClickListener {
 
     }
 
-    private Bitmap getBitmap(int drwable)
-    {
+    private Bitmap getBitmap(int drwable) {
         Drawable drawable = activity.getResources().getDrawable(drwable);
         Canvas canvas = new Canvas();
         Bitmap bitmap = Bitmap.createBitmap(300, 400, Bitmap.Config.ARGB_8888);
@@ -186,8 +182,8 @@ public class CustomDialog extends Dialog implements View.OnClickListener {
                 paint.setTextSize(50);
                 paint.setAntiAlias(true);
                 // paint.setUnderlineText(underline);
-                canvas.drawBitmap(appLogo,0,0,paint2);
-                canvas.drawText("Scanned by Virtual Scanner", 40, bitmap.getHeight()-40, paint);
+                canvas.drawBitmap(appLogo, 0, 0, paint2);
+                canvas.drawText("Scanned by Virtual Scanner", 40, bitmap.getHeight() - 40, paint);
                 document.finishPage(page);
 
             }

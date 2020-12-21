@@ -10,8 +10,8 @@
     <item
         android:id="@+id/Documents"
         android:icon="@drawable/documents_icon"
-        app:showAsAction="withText"
-        android:title="Documents" />
+        android:title="Documents"
+        app:showAsAction="withText" />
 
     <item
         android:id="@+id/placeholder"

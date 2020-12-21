@@ -15,12 +15,12 @@ import com.example.virtualscanner.R;
 import java.util.ArrayList;
 
 public class ImagePreviewAdapter extends RecyclerView.Adapter<ImagePreviewAdapter.ImageViewHolder> {
+    public static int INDEX;
     private Context context;
     private ArrayList<Bitmap> bitmapArrayList;
     private imagePreviewInterface imagePreviewInterface;
-    public static int INDEX;
-    public ImagePreviewAdapter(Context context, ArrayList<Bitmap> bitmapArrayList)
-    {
+
+    public ImagePreviewAdapter(Context context, ArrayList<Bitmap> bitmapArrayList) {
         this.context = context;
         this.bitmapArrayList = bitmapArrayList;
         this.INDEX = INDEX;
@@ -29,7 +29,7 @@ public class ImagePreviewAdapter extends RecyclerView.Adapter<ImagePreviewAdapte
     @NonNull
     @Override
     public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.image_preview_list,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.image_preview_list, parent, false);
         return new ImageViewHolder(view);
     }
 
@@ -45,13 +45,21 @@ public class ImagePreviewAdapter extends RecyclerView.Adapter<ImagePreviewAdapte
         return bitmapArrayList.size();
     }
 
+    public void setImagePreview(imagePreviewInterface anInterface) {
+        imagePreviewInterface = anInterface;
+    }
+
+    public interface imagePreviewInterface {
+        void onClickImage(ArrayList<Bitmap> arrayList);
+    }
+
     public class ImageViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
 
         public ImageViewHolder(@NonNull View itemView) {
             super(itemView);
-            
+
             imageView = itemView.findViewById(R.id.imagePreviewList);
             imageView.setOnClickListener(v -> {
                 bitmapArrayList.remove(getAdapterPosition());
@@ -59,15 +67,5 @@ public class ImagePreviewAdapter extends RecyclerView.Adapter<ImagePreviewAdapte
                 notifyDataSetChanged();
             });
         }
-    }
-
-    public void setImagePreview(imagePreviewInterface anInterface)
-    {
-        imagePreviewInterface = anInterface;
-    }
-
-    public interface imagePreviewInterface
-    {
-        void onClickImage(ArrayList<Bitmap> arrayList);
     }
 }

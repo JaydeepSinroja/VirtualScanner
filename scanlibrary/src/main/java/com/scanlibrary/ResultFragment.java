@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -22,6 +21,7 @@ import java.io.IOException;
  */
 public class ResultFragment extends Fragment {
 
+    private static ProgressDialogFragment progressDialogFragment;
     private View view;
     private ImageView scannedImageView;
     private Button doneButton;
@@ -31,7 +31,6 @@ public class ResultFragment extends Fragment {
     private Button grayModeButton;
     private Button bwButton;
     private Bitmap transformed;
-    private static ProgressDialogFragment progressDialogFragment;
 
     public ResultFragment() {
     }
@@ -78,6 +77,21 @@ public class ResultFragment extends Fragment {
 
     public void setScannedImage(Bitmap scannedImage) {
         scannedImageView.setImageBitmap(scannedImage);
+    }
+
+    protected synchronized void showProgressDialog(String message) {
+        if (progressDialogFragment != null && progressDialogFragment.isVisible()) {
+            // Before creating another loading dialog, close all opened loading dialogs (if any)
+            progressDialogFragment.dismissAllowingStateLoss();
+        }
+        progressDialogFragment = null;
+        progressDialogFragment = new ProgressDialogFragment(message);
+        FragmentManager fm = getFragmentManager();
+        progressDialogFragment.show(fm, ProgressDialogFragment.class.toString());
+    }
+
+    protected synchronized void dismissDialog() {
+        progressDialogFragment.dismissAllowingStateLoss();
     }
 
     private class DoneButtonClickListener implements View.OnClickListener {
@@ -225,20 +239,5 @@ public class ResultFragment extends Fragment {
                 }
             });
         }
-    }
-
-    protected synchronized void showProgressDialog(String message) {
-        if (progressDialogFragment != null && progressDialogFragment.isVisible()) {
-            // Before creating another loading dialog, close all opened loading dialogs (if any)
-            progressDialogFragment.dismissAllowingStateLoss();
-        }
-        progressDialogFragment = null;
-        progressDialogFragment = new ProgressDialogFragment(message);
-        FragmentManager fm = getFragmentManager();
-        progressDialogFragment.show(fm, ProgressDialogFragment.class.toString());
-    }
-
-    protected synchronized void dismissDialog() {
-        progressDialogFragment.dismissAllowingStateLoss();
     }
 }

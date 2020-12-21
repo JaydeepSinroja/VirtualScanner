@@ -32,16 +32,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
-            android:text="@string/locker_fragment"
             android:fontFamily="@font/josefinsans_variablefont_wght"
+            android:text="@string/locker_fragment"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/_25sdp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/_1sdp"
-            android:background="@color/gray"
-            android:layout_marginTop="@dimen/_5sdp"/>
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/gray" />
 
     </LinearLayout>
 
@@ -57,8 +57,8 @@
             android:id="@+id/text_promt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/enterpasscode"
             android:fontFamily="@font/josefinsans_variablefont_wght"
+            android:text="@string/enterpasscode"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/_15sdp" />
 
@@ -66,10 +66,10 @@
 
     <LinearLayout
         android:id="@+id/check_layout"
-        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="?attr/actionBarSize"
         android:layout_below="@+id/text_locker"
+        android:layout_centerHorizontal="true"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -122,11 +122,11 @@
                 android:layout_width="@dimen/_60sdp"
                 android:layout_height="@dimen/_60sdp"
                 android:layout_gravity="center"
-                android:fontFamily="@font/josefinsans_variablefont_wght"
-                android:textColor="@color/white"
                 android:background="@drawable/locker_btn_background"
+                android:fontFamily="@font/josefinsans_variablefont_wght"
                 android:gravity="center"
                 android:text="1"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_30sdp" />
         </FrameLayout>
 
@@ -138,13 +138,13 @@
             <TextView
                 android:id="@+id/button_2"
                 android:layout_width="@dimen/_60sdp"
-                android:fontFamily="@font/josefinsans_variablefont_wght"
-                android:textColor="@color/white"
                 android:layout_height="@dimen/_60sdp"
                 android:layout_gravity="center"
                 android:background="@drawable/locker_btn_background"
+                android:fontFamily="@font/josefinsans_variablefont_wght"
                 android:gravity="center"
                 android:text="2"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_30sdp" />
         </FrameLayout>
 
@@ -156,13 +156,13 @@
             <TextView
                 android:id="@+id/button_3"
                 android:layout_width="@dimen/_60sdp"
-                android:fontFamily="@font/josefinsans_variablefont_wght"
-                android:textColor="@color/white"
                 android:layout_height="@dimen/_60sdp"
                 android:layout_gravity="center"
                 android:background="@drawable/locker_btn_background"
+                android:fontFamily="@font/josefinsans_variablefont_wght"
                 android:gravity="center"
                 android:text="3"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_30sdp" />
         </FrameLayout>
 
@@ -187,11 +187,11 @@
                 android:layout_width="@dimen/_60sdp"
                 android:layout_height="@dimen/_60sdp"
                 android:layout_gravity="center"
-                android:fontFamily="@font/josefinsans_variablefont_wght"
-                android:textColor="@color/white"
                 android:background="@drawable/locker_btn_background"
+                android:fontFamily="@font/josefinsans_variablefont_wght"
                 android:gravity="center"
                 android:text="4"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_30sdp" />
         </FrameLayout>
 
@@ -205,11 +205,11 @@
                 android:layout_width="@dimen/_60sdp"
                 android:layout_height="@dimen/_60sdp"
                 android:layout_gravity="center"
-                android:fontFamily="@font/josefinsans_variablefont_wght"
-                android:textColor="@color/white"
                 android:background="@drawable/locker_btn_background"
+                android:fontFamily="@font/josefinsans_variablefont_wght"
                 android:gravity="center"
                 android:text="5"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_30sdp" />
         </FrameLayout>
 
@@ -223,11 +223,11 @@
                 android:layout_width="@dimen/_60sdp"
                 android:layout_height="@dimen/_60sdp"
                 android:layout_gravity="center"
-                android:fontFamily="@font/josefinsans_variablefont_wght"
-                android:textColor="@color/white"
                 android:background="@drawable/locker_btn_background"
+                android:fontFamily="@font/josefinsans_variablefont_wght"
                 android:gravity="center"
                 android:text="6"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_30sdp" />
         </FrameLayout>
     </LinearLayout>
@@ -250,12 +250,12 @@
                 android:id="@+id/button_7"
                 android:layout_width="@dimen/_60sdp"
                 android:layout_height="@dimen/_60sdp"
-                android:fontFamily="@font/josefinsans_variablefont_wght"
-                android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:background="@drawable/locker_btn_background"
+                android:fontFamily="@font/josefinsans_variablefont_wght"
                 android:gravity="center"
                 android:text="7"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_30sdp" />
         </FrameLayout>
 
@@ -268,12 +268,12 @@
                 android:id="@+id/button_8"
                 android:layout_width="@dimen/_60sdp"
                 android:layout_height="@dimen/_60sdp"
-                android:fontFamily="@font/josefinsans_variablefont_wght"
-                android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:background="@drawable/locker_btn_background"
+                android:fontFamily="@font/josefinsans_variablefont_wght"
                 android:gravity="center"
                 android:text="8"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_30sdp" />
         </FrameLayout>
 
@@ -287,11 +287,11 @@
                 android:layout_width="@dimen/_60sdp"
                 android:layout_height="@dimen/_60sdp"
                 android:layout_gravity="center"
-                android:fontFamily="@font/josefinsans_variablefont_wght"
-                android:textColor="@color/white"
                 android:background="@drawable/locker_btn_background"
+                android:fontFamily="@font/josefinsans_variablefont_wght"
                 android:gravity="center"
                 android:text="9"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_30sdp" />
         </FrameLayout>
     </LinearLayout>
@@ -313,13 +313,13 @@
                 android:id="@+id/button_0"
                 android:layout_width="@dimen/_60sdp"
 
-                android:fontFamily="@font/josefinsans_variablefont_wght"
-                android:textColor="@color/white"
                 android:layout_height="@dimen/_60sdp"
                 android:layout_gravity="center"
                 android:background="@drawable/locker_btn_background"
+                android:fontFamily="@font/josefinsans_variablefont_wght"
                 android:gravity="center"
                 android:text="0"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_30sdp" />
         </FrameLayout>
 
@@ -342,12 +342,12 @@
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:layout_gravity="center"
-                android:textSize="@dimen/_15sdp"
                 android:background="@drawable/ripple_btn"
                 android:fontFamily="@font/josefinsans_variablefont_wght"
                 android:gravity="center"
                 android:text="Cancel"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_15sdp" />
         </FrameLayout>
 
 
@@ -361,12 +361,12 @@
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:background="@drawable/ripple_btn"
-                android:textSize="@dimen/_15sdp"
                 android:fontFamily="@font/josefinsans_variablefont_wght"
+                android:gravity="center"
                 android:text="Delete"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_15sdp" />
 
         </FrameLayout>
     </LinearLayout>
